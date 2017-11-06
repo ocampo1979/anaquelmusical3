@@ -1,0 +1,116 @@
+<div class="row">
+  
+  <div class="col-sm-4">
+    <br><br>
+    <img width="350" src="/assets/images/tornamesa.jpg">
+  </div>
+  
+  <div class="col-sm-8">
+    <h2>Crear Registro de Disco:</h2>
+    <form class="form-horizontal" (ngSubmit)="onSubmit()" #clienteForm="ngForm">
+      
+      <div class="form-group">
+        <label for="id_disco" class="control-label col-sm-2">ID Disco</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="id_disco" 
+            placeholder="Ingrese un nuevo numero para el LP"
+            [(ngModel)]="discos.id_disco" name="id_disco">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="artista" class="control-label col-sm-2">Nombre Artista</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="artista"
+              placeholder="Ingrese el artista o grupo"
+              [(ngModel)]="discos.artista" name="artista">
+          </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="nombre_album" class="control-label col-sm-2">Nombre del Album</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombre_album"
+              placeholder="Ingrese nombre del album"  
+              [(ngModel)]="discos.nombre_album" name="nombre_album">
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sello" class="control-label col-sm-2">Sello Discográfico</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="sello"
+              placeholder="Ingrese nombre del sello"
+              [(ngModel)]="discos.sello" name="sello">
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lanzamiento" class="control-label col-sm-2">Año de Lanzamiento</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="lanzamiento"
+              placeholder="Ingrese año de lanzamiento"
+              [(ngModel)]="discos.lanzamiento" name="lanzamiento">
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="precio" class="control-label col-sm-2">Valor del LP</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="precio"
+              placeholder="Ingrese valor del LP"
+              [(ngModel)]="discos.precio" name="precio">
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cedula_coleccionista" class="control-label col-sm-2">Cedula del Coleccionista</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="cedula_coleccionista"
+              placeholder="Ingrese cedula del coleccionista"
+              [(ngModel)]="discos.cedula_coleccionista" name="cedula_coleccionista">
+          </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+          <button type="submit" class="btn btn-success" (click)="addDisco(i)">Guardar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  
+  <div class="row">
+
+    <div class="col-sm-8">
+      <h2>Registro de Discos: </h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID_Disco</th>
+            <th>Artista</th>
+            <th>Nombre Album</th>
+            <th>Sello</th>
+            <th>Lanzamiento</th>
+            <th>Precio</th>
+            <th>Cedula Coleccionista</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let disco of discoService.discoList">
+            <td>{{discos.id_disco}}</td>
+            <td>{{discos.artista}}</td>
+            <td>{{discos.nombre_album}}</td>
+            <td>{{discos.sello}}</td>
+            <td>{{discos.lanzamiento}}</td>
+            <td>{{discos.precio}}</td>
+            <td>{{discos.cedula_coleccionista}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
