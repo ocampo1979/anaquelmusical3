@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Discos } from './disco';
+import { Disco } from '../disco/disco';
 import { HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class DiscoDataServerService {
 
-  discoList: Array<Discos>;
+  discosList: Array<Disco>;
 
   constructor(private http: HttpClient) {
   }
   cargarDiscos() {
     this.http.get('http://localhost:8080/anaquelmusical/webresources/entidades.discos')
     .subscribe(data => {
-      this.discoList = data as Array<Discos>;
+      this.discosList = data as Array<Disco>;
     });  
   }
-  saveDiscos(disco: Discos) {
+
+  /*saveDiscos(disco: Disco) {
     const body = {id_disco: disco.id_disco, 
                   artista: disco.artista, 
                   nombre_album: disco.nombre_album, 
@@ -27,5 +28,5 @@ export class DiscoDataServerService {
     .subscribe(data => {
       this.cargarDiscos();
     });
-  }
+  }*/
 }

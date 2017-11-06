@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DiscoComponent } from './disco/disco.component';
 
-import { DiscoService } from './servicios/disco.service';
+import { DiscoDataServerService } from "./servicios/disco-data-server.service";
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -29,7 +29,7 @@ const routes: Routes = [
     HttpClientModule,
     HttpModule
   ],
-  providers: [DiscoService],
+  providers: [DiscoDataServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

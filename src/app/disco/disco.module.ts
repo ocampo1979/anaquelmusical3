@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { DiscoDataServerService } from './disco-data-server.service';
+import { DiscoDataServerService } from '../servicios/disco-data-server.service';
 
  
 @NgModule({

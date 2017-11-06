@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DiscoService } from '../servicios/disco.service';
-
-import { DiscoDataServerService } from './disco-data-server.service';
-import { Discos } from './disco';
+import { DiscoDataServerService } from '../servicios/disco-data-server.service';
+import { Disco } from '../disco/disco';
 
 @Component({
   selector: 'app-disco',
@@ -11,10 +9,10 @@ import { Discos } from './disco';
 })
 export class DiscoComponent implements OnInit {
   disco: any[];
-  constructor(private discoService: DiscoService) { }
+  constructor(private discoService: DiscoDataServerService) { }
 
   ngOnInit() {
-    this.disco = this.discoService.getDisco();
+    this.discoService.cargarDiscos();
   }
 
 }

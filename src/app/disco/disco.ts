@@ -1,4 +1,4 @@
-export class Discos {
+export class Disco {
     public id_disco: string;
     public artista: string;
     public nombre_album: string;
