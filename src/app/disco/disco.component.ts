@@ -8,11 +8,17 @@ import { Disco } from '../disco/disco';
   styleUrls: ['./disco.component.css']
 })
 export class DiscoComponent implements OnInit {
-  disco: any[];
+  disco: Disco;
   constructor(private discoService: DiscoDataServerService) { }
 
   ngOnInit() {
     this.discoService.cargarDiscos();
+    this.disco = new Disco();
+  }
+
+  GuardarDiscos(){
+    this.discoService.saveDiscos(this.disco);
+    this.disco = new Disco();
   }
 
 }

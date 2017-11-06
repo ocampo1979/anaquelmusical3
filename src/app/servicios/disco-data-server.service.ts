@@ -16,17 +16,21 @@ export class DiscoDataServerService {
     });  
   }
 
-  /*saveDiscos(disco: Disco) {
-    const body = {id_disco: disco.id_disco, 
+  saveDiscos(disco: Disco) {
+    const body = {
+                  idDisco: disco.id_disco, 
                   artista: disco.artista, 
-                  nombre_album: disco.nombre_album, 
+                  nombreAlbum: disco.nombre_album, 
                   sello: disco.sello, 
                   lanzamiento: disco.lanzamiento,
                   precio: disco.precio,
-                  cedula_coleccionista: disco.cedula_coleccionista};
+                  cedulaColeccionista: { 
+                    cedula: disco.cedula_coleccionista
+                  }
+                };
     this.http.post('http://localhost:8080/anaquelmusical/webresources/entidades.discos', body)
     .subscribe(data => {
       this.cargarDiscos();
     });
-  }*/
+  }
 }
